@@ -67,7 +67,9 @@
       <p class="err" id="passErr"></p>
       <div class="row">
         <label class="check"><input type="checkbox" id="remember"> Keep me signed in</label>
-        <a href="#" id="forgot">Forgot password?</a>
+        <a href="{% url 'password_reset' %}" id="forgot">
+    Forgot password?
+</a>
       </div>
       <button class="primary" type="submit">Sign in</button>
     </form>

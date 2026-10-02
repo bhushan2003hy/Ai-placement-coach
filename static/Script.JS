@@ -81,11 +81,7 @@ $('#togglePass').addEventListener('click', e => {
   }
   pass.addEventListener('input', () => { $('#meter').dataset.s = strength(pass.value); });
 
-  $('#forgot').addEventListener('click', e => {
-    e.preventDefault();
-    const em = $('#email').value.trim();
-    showToast(/^\S+@\S+\.\S+$/.test(em) ? `Reset link sent to ${em}` : 'Enter your email first, then tap Forgot password');
-  });
+ 
 // yahase hoga
 $('#emailForm').addEventListener('submit', e => {
 
@@ -198,3 +194,54 @@ $('#emailForm').addEventListener('submit', e => {
   }
 })();
 
+// New swap
+
+// =========================
+// FORGOT PASSWORD TEXT
+// =========================
+
+const forgotBubble = document.getElementById("forgotBubble");
+
+if (forgotBubble) {
+
+    const messages = [
+        {
+            title: "Keep moving forward",
+            text: "Small steps today can build a stronger career tomorrow."
+        },
+        {
+            title: "PlaceMate AI",
+            text: "Practice smarter, build confidence and get placement ready."
+        },
+        {
+            title: "Your journey matters",
+            text: "Keep learning. Keep practicing. Keep growing."
+        },
+        {
+            title: "Career preparation",
+            text: "Your next opportunity could start with one good practice session."
+        }
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+
+        forgotBubble.classList.add("swap-out");
+
+        setTimeout(() => {
+
+            index = (index + 1) % messages.length;
+
+            document.getElementById("forgotBubbleTitle").textContent =
+                messages[index].title;
+
+            document.getElementById("forgotBubbleText").textContent =
+                messages[index].text;
+
+            forgotBubble.classList.remove("swap-out");
+
+        }, 500);
+
+    }, 2000);
+}

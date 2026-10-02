@@ -125,14 +125,47 @@ STATIC_URL = 'static/'
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
-MAILERS = {
-    'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
-    },
-}
+
 
 #added manualiy
 STATICFILES_DIRS = [
     BASE_DIR / "static"
    
 ]
+
+# Password Reset Email Settings
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "yourgmail@gmail.com"
+EMAIL_HOST_PASSWORD = "your_app_password"
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Email
+# https://docs.djangoproject.com/en/6.1/topics/email/
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "YOUR_GMAIL@gmail.com"
+EMAIL_HOST_PASSWORD = "YOUR_GMAIL_APP_PASSWORD"
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+# Static files
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+EMAIL_HOST_USER = "bhushanhyalij40@gmail.com"
+EMAIL_HOST_PASSWORD = "egxf gjzc qvtu accc"

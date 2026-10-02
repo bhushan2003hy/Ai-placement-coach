@@ -8,17 +8,61 @@
   --accent:#ffb866; --accent-ink:#2a1b05; --focus:#9a90ff; --shadow:0 20px 50px rgba(0,0,0,.45);
 }
 *{box-sizing:border-box;margin:0}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;transition:background .3s}
+/* Change */
+body{
+    font-family:'DM Sans',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    transition:background .3s;
+}
 a{color:inherit}
-.nav{width:900px;max-width:100%;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.nav {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px clamp(20px, 5vw, 70px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--line);
+}
 .brand{font:800 22px 'Bricolage Grotesque',sans-serif;text-decoration:none;letter-spacing:-.5px}
 .brand span{background:var(--accent);color:var(--accent-ink);font-size:11px;padding:2px 6px;border-radius:6px;margin-left:4px;vertical-align:super}
 .nav nav{display:flex;align-items:center;gap:18px;font-size:14px}
 .link{text-decoration:none}
 .pill{background:var(--accent);color:var(--accent-ink);padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600}
-.icon-btn{background:none;border:1px solid var(--line);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px}
+.icon-btn{
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--ink);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.stage{flex:1;position:relative;display:flex;justify-content:center;align-items:flex-start;padding:24px 20px 32px;overflow-x:clip}
+.stage {
+    flex: 1;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    padding: 50px 20px 40px;
+
+    overflow: hidden;
+}
 .card{width:400px;max-width:100%;flex:none;background:var(--card);border-radius:26px;padding:38px 34px 28px;box-shadow:var(--shadow);text-align:center}
 .card h1{font:800 28px 'Bricolage Grotesque',sans-serif;letter-spacing:-.5px}
 .sub{color:var(--muted);font-size:14px;margin:8px 0 20px}
@@ -39,7 +83,13 @@ a{color:inherit}
 .cc{font-weight:600;font-size:14px;padding-right:10px;margin-right:10px;border-right:1px solid var(--line)}
 .err{color:var(--err);font-size:12px;min-height:0}
 .meter{display:flex;gap:4px;margin:2px 0}
-.meter i{flex:1;height:4px;border-radius:2px;background:var(--line);transition:background .2s}
+.meter i{
+    flex:1;
+    height:4px;
+    border-radius:2px;
+    background:var(--line);
+    transition:background .2s;
+}
 .meter[data-s="1"] i:nth-child(-n+1){background:var(--err)}
 .meter[data-s="2"] i:nth-child(-n+2){background:#e59a2f}
 .meter[data-s="3"] i:nth-child(-n+3){background:#9bb83a}
@@ -62,7 +112,20 @@ a{color:inherit}
 .divider{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;margin:20px 0 14px}
 .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
 .social{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.soc{display:flex;gap:8px;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:11px;font:600 13px 'DM Sans';cursor:pointer;transition:background .2s}
+.soc{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    justify-content:center;
+    border:1px solid var(--line);
+    background:var(--card);
+    color:var(--ink);
+    border-radius:12px;
+    padding:11px;
+    font:600 13px 'DM Sans';
+    cursor:pointer;
+    transition:background .2s;
+}
 .soc:hover{background:var(--bg)}
 .foot{font-size:13px;color:var(--muted);margin-top:18px}
 .foot b{color:var(--ink)}
@@ -131,4 +194,265 @@ a{color:inherit}
     .register-illustration {
         display: none;
     }
+}
+/* Forget password */
+/* =========================
+   FORGOT PASSWORD PAGE
+   ========================= */
+
+.forgot-card {
+    margin-top: 35px;
+}
+
+.forgot-card {
+    width: min(400px, 90vw);
+    margin-top: 35px;
+}
+
+.forgot-card .sub {
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.forgot-card .primary {
+    margin-top: 8px;
+}
+
+.forgot-card .foot {
+    margin-top: 22px;
+}
+
+
+/
+/* New one */
+/* =========================
+   FORGOT PASSWORD LAYOUT
+   ========================= */
+
+.forgot-illustration {
+    position: absolute;
+
+    right: calc(50% + 230px);
+    top: 50px;
+
+    width: 300px;
+    height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+.forgot-illustration img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================
+   RIGHT SIDE ROTATING BOX
+   ========================= */
+
+.forgot-side-text {
+    position: absolute;
+    left: calc(50% + 215px);
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: min(220px, 20vw);
+}
+
+/* Bubble animation */
+
+#forgotBubble {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#forgotBubble.swap-out {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1100px) {
+
+    .forgot-illustration {
+        width: 280px;
+        right: calc(50% + 205px);
+    }
+
+    .forgot-side-text {
+        left: calc(50% + 205px);
+    }
+}
+
+@media (max-width: 940px) {
+
+    .forgot-illustration,
+    .forgot-side-text {
+        display: none;
+    }
+}
+/* --------------------------------------------------------- */
+/* =========================
+   FORGOT PASSWORD LAYOUT
+   ========================= */
+
+.forgot-illustration {
+    position: absolute;
+    right: calc(50% + 215px);
+    top: 70px;
+
+    width: 330px;
+    height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+}
+
+.forgot-illustration img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================
+   RIGHT SIDE MESSAGE BOX
+   ========================= */
+
+.forgot-side-text {
+    position: absolute;
+
+    left: calc(50% + 215px);
+    top: 145px;
+
+    width: 220px;
+}
+
+#forgotBubble {
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+#forgotBubble.swap-out {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+
+/* =========================
+   FORGOT CARD
+   ========================= */
+
+.forgot-card {
+    position: relative;
+
+    width: 400px;
+    max-width: 90vw;
+
+    margin-top: 35px;
+
+    z-index: 5;
+}
+
+.forgot-card h1 {
+    margin-bottom: 4px;
+}
+
+.forgot-card .sub {
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.forgot-card .primary {
+    margin-top: 8px;
+}
+
+.forgot-card .foot {
+    margin-top: 22px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1100px) {
+
+    .forgot-illustration {
+        width: 280px;
+        height: 340px;
+        right: calc(50% + 205px);
+    }
+
+   .forgot-side-text {
+    position: absolute;
+
+    left: calc(50% + 230px);
+    top: 120px;
+
+    width: 220px;
+
+    z-index: 2;
+}
+}
+
+
+@media (max-width: 940px) {
+
+    .forgot-illustration,
+    .forgot-side-text {
+        display: none;
+    }
+}
+.nav .link{
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+/* Lokin page button color chane of sing in ka */
+/* =========================
+   LOGIN PAGE HEADER BUTTONS
+   ========================= */
+
+.nav .link {
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav .icon-btn {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--ink);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
